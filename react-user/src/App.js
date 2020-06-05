@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
+import { Route } from 'react-router-dom'; 
+import UserComp from './components/UserComp';
 
 class App extends React.Component {
   constructor() {
@@ -28,14 +30,10 @@ class App extends React.Component {
     .catch(error => console.log(error))
   }
 
-  componentDidUpdate() {
-    console.log('Updated');
-  }
-
   render(){
     return(
       <div>
-
+        <Route path='/' render={props => <UserComp {...props} profile={this.state.profile} />} />
       </div>
     )
   }
