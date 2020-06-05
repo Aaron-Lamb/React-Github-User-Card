@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Route } from 'react-router-dom'; 
 import UserComp from './components/UserComp';
+import FollowersComp from './components/FollowersComp';
 
 class App extends React.Component {
   constructor() {
@@ -34,6 +35,7 @@ class App extends React.Component {
     return(
       <div>
         <Route path='/' render={props => <UserComp {...props} profile={this.state.profile} />} />
+        <Route path='/followers' render={props => <FollowersComp {...props} followers={this.state.followers} />} />
       </div>
     )
   }
